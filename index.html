@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman game</title>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<h1>Hangman!</h1>
+	
+	<script type="text/javascript">
+		//List of potential words for the game
+		var words = ["sandwhich", "noodles", "popcorn", "jerky", "chicken", "coconut", "nutella"]
+
+		// start of the word "test"
+		var word = "test"; //My array needs to be put here and loop through the choices.
+		var blanks = word.split("").map(function(){return "_"});
+		var guessCount = 0;
+		var guesses = [];
+		// everytime they enter a guess
+		var guess = "e"; //Needs to be the $.click function
+		var index = word.indexOf(guess);
+
+		if(guesses.indexOf(guess) == -1){
+			guesses.push(guess);
+			if(index == -1){
+				guessCount++
+			};
+
+			while(index > -1){
+				blanks[index] = guess;
+				var index = word.indexOf(guess, index + 1);
+			};
+
+			if(blanks.indexOf("_") == -1){
+				//you have won!
+			};
+
+			if(guessCount > 5){
+				//you lost
+			};
+		};
+
+	</script>
+
+</body>
+</html>
