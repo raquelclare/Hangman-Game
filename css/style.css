@@ -1,8 +1,9 @@
 .jumbotron {
 	text-align: center;
 	color: #eee;
-	background: url(css/images/foodheader.jpg) repeat center center;
+	background: url(foodheader.jpg) repeat center center;
 	background-size: cover;
+	/*background-opacity: 0.3; */
 }
 
 #header-img {
@@ -20,5 +21,5 @@
 }
 
 .container {
-	background-color: pink;
+	background-color: #eee;
 }
