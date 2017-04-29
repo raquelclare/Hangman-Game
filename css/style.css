@@ -1,0 +1,24 @@
+.jumbotron {
+	text-align: center;
+	color: #eee;
+	background: url(css/images/foodheader.jpg) repeat center center;
+	background-size: cover;
+}
+
+#header-img {
+	height: 200px;
+	width: 350px;
+}
+
+#game-start {
+	text-align: center;
+}
+
+* {
+	border: solid 1px;
+	/*background-image: url(https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg);*/
+}
+
+.container {
+	background-color: pink;
+}
