@@ -9,6 +9,7 @@
 
 		// This needs to decrement by 1 for each wrong guess?
 		var guessesLeft = 7; 
+		document.getElementById("guessesleft").innerHTML = guessesLeft;
 
 		// Everytime they enter a guess push the letter into array
 		var guesses = [];
@@ -33,6 +34,11 @@
 			// Pressing key will now equal guess
 			var guess = (event.key).toLowerCase();
 			console.log(guess);
+			// Decrements guessesLeft by 1 for each guess made. But needs 
+			//to be updated for only wrong guesses
+			guessesLeft--;
+			//Displays new guess count
+			document.getElementById("guessesleft").innerHTML = guessesLeft;
 			var index = word.indexOf(guess);
 
 			// event.preventDefault();
@@ -47,21 +53,25 @@
 				document.getElementById("lettersguessed").innerHTML = guesses;
 			};
 
+			//
 			while(index > -1){
 				blanks[index] = guess;
 				var index = word.indexOf(guess, index + 1);
 				document.getElementById("word").innerHTML = blanks;
 			};
 
+			// You win if the underscores are no longer in the word array
 			if(blanks.indexOf("_") === -1){
 				//you have won! Game needs to reset
 				wins++;
+				document.getElementById("wins").innerHTML = wins;
 				alert("You win!"); 
 				location.reload();
 				guessesLeft = 7;
 				guesses = [];
 			};
 
+			// You lose if the amount of guesses left is equal to zero
 			if(guessesLeft === 0){
 				//you lost! Game needs to reset
 				losses++;

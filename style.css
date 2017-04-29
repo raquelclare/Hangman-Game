@@ -1,0 +1,17 @@
+.jumbotron {
+	text-align: center;
+	/*background-image: url(https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg);*/
+}
+
+#game-start {
+	text-align: center;
+}
+
+* {
+	border: solid 1px black;
+	/*background-image: url(https://static.pexels.com/photos/5317/food-salad-restaurant-person.jpg);*/
+}
+
+.container {
+	background-color: pink;
+}
