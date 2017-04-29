@@ -9,59 +9,16 @@
 </head>
 <body>
 
-	<h1>Hangman!</h1>
+	<h1>The Hunger Games Hangman!</h1>
 
-	<h2 id="wins">wins: </h2>
-	<h2 id="losses">losses: </h2>
+	<h2>wins: <span id="wins"></span></h2>
+	<h2>losses: <span id="losses"></span></h2>
 
-	<h2 id="word">Word: </h2>
+	<h2>Word: <span id="word"></span></h2>
 
-	<h2 id="guessleft">Guesses Remaining: </h2>
-	<h2 id="lettersguessed">Letters Guessed: </h2>
+	<h2>Guesses Remaining: <span id="guessesleft"></span></h2>
+	<h2>Letters Guessed: <span id="lettersguessed"></span></h2>
 
-	
-	<script type="text/javascript">
-		//List of potential words for the game
-		var words = ["sandwhich", "noodles", "popcorn", "jerky", "chicken", "coconut", "nutella"];
-		var wins = 0;
-		var losses = 0;
-
-
-		// start of the word "test"
-		var word = "test"; //My array needs to be put here and loop through the choices.
-		var blanks = word.split("").map(function(){return "_"});
-		var guessCount = 0;
-		var guessesLeft = 7; //this needs to decrement by 1 for each wrong guess?
-		var guesses = [];
-		// everytime they enter a guess
-		var guess = "e"; //Needs to be the $.keyup function
-		// var guess = $("guess").keyup(function(){
-
-		// });
-		var index = word.indexOf(guess);
-
-		if(guesses.indexOf(guess) == -1){
-			guesses.push(guess);
-			// $("#")
-			if(index == -1){
-				guessCount++
-			};
-
-			while(index > -1){
-				blanks[index] = guess;
-				var index = word.indexOf(guess, index + 1);
-			};
-
-			if(blanks.indexOf("_") == -1){
-				//you have won! Game needs to reset
-			};
-
-			if(guessCount > 5){
-				//you lost! Game needs to reset
-			};
-		};
-
-	</script>
-
+	<script type="text/javascript" src="game.js"></script>
 </body>
 </html>
